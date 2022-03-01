@@ -3,9 +3,9 @@ const btn = document.getElementById("button")
 const adviceId = document.getElementById("advice-id")
 const adviceTxt = document.getElementById("advice")
 
-btn.addEventListener("click", generateAdvice)
+btn.addEventListener("click", getAdvice)
 
-function generateAdvice() {
+function getAdvice() {
     fetch("https://api.adviceslip.com/advice")
         .then(response => response.json())
         .then(data => {
@@ -14,3 +14,5 @@ function generateAdvice() {
         })
         .catch(error => alert("Try later"))
 }
+
+getAdvice()
